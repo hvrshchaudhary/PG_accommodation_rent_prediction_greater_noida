@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML API</title>
+</head>
+<body>
+    <div class = "login">
+        <h1>Greater noida PG rooms price prediction</h1>
+        <!-- Main input for recieveing query for our model-->
+        <form action = "{{ url_for('predict')}}" method = "post">
+            <label>Specify the no. of people you are comfortable sharing room with: </label> 
+                <select id="Occupancy" name="Occupancy">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select><br><br>
+            <label>Do you want a geaser?</label>
+            <select id="GEASER" name="GEASER">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select><br><br>
+            <button type = "submit">Predict</button>
+        </form>
+    </div>
+    <br><br>
+    {{prediction_text}}<!--the output will be displayed here-->
+</body>
+</html>
